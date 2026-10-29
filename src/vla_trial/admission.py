@@ -73,7 +73,7 @@ def admit_course_run(runtime, receipt):
                 if not ident["ours"]:
                     raise AdmissionError("A foreign compute process is present.")
                 cmd = ident["cmd"]
-                if "scripts/wp1_readout.py" in cmd and ident["cwd"] == str(lib.HERE):
+                if ("scripts/wp1_readout.py" in cmd or "scripts/s3_vlm_eval.py" in cmd) and ident["cwd"] == str(lib.HERE):
                     peak = re.search(r"--est-peak-mib\s+(\d+)", cmd)
                     if peak is None:
                         raise AdmissionError("Existing task has no verified peak estimate.")
@@ -81,6 +81,8 @@ def admit_course_run(runtime, receipt):
                     # Match the live process to its current progress record.
                     matches = list((lib.HERE / "runs/wp1").glob(f"*_{proc['pid']}/progress.json"))
                     matches += list((lib.HERE / "runs/wp1_002v2").glob(f"*_{proc['pid']}/progress.json"))
+                    if "scripts/s3_vlm_eval.py" in cmd:
+                        matches += list((lib.HERE / "runs/wp2").glob(f"*_{proc['pid']}/progress.json"))
                     if not matches:
                         raise AdmissionError("Existing readout process has no current task record.")
                     progress = json.loads(matches[-1].read_text())
