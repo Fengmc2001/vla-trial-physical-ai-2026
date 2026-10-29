@@ -160,8 +160,7 @@ The completed local submission video is 70.5 seconds. It preserves the same
 run's full 121-second raw recording at labeled 2× speed, with ten seconds of
 introductory/result cards. Initialization and model waiting are disclosed
 omissions. The final video passed full decoding and visual review after its title-font fix;
-the exact Japanese/English/Chinese instruction is readable. All three PDF pages
-were visually reviewed. These artifact checks do not mean YouTube or OmniCampus submission
+the exact Japanese/English/Chinese instruction is readable. All six pages of the revised monochrome academic PDF were rendered and visually reviewed. These artifact checks do not mean YouTube or OmniCampus submission
 has occurred.
 
 Use one identified real run for the entire robot sequence. Introductory/result
@@ -180,4 +179,9 @@ are separate states.
 
 ## Public release
 
-The completed code, sanitized evidence, 70.5-second final video and three-page report are published at https://github.com/Fengmc2001/vla-trial-physical-ai-2026. Public visibility and anonymous access were checked. The clean export passed 170 CPU tests; a fresh GPU-machine reproduction has not been claimed. YouTube upload and OmniCampus submission remain separate.
+The completed code, sanitized evidence, 70.5-second final video and revised six-page monochrome report are published at https://github.com/Fengmc2001/vla-trial-physical-ai-2026. Public visibility and anonymous access were checked. The clean export passed 170 CPU tests; a fresh GPU-machine reproduction has not been claimed. The user has uploaded the video to https://www.youtube.com/watch?v=hS34eNkm5VM. OmniCampus submission remains pending while the report is reviewed; the video title still needs to match the account name.
+
+
+## Monochrome academic report
+
+The revised PDF retains the same genuine run and numerical results. It contains four numbered figures and three tables, with system architecture, actual grayscale before/after images, the recorded manipulation sequence, and plotted trajectories. Figure annotations project saved coordinates through the recorded fixed camera; crops and times are disclosed. No generated replacement scenes or new robot trials are used. The original report is retained locally and in Git history.

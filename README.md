@@ -2,7 +2,7 @@
 
 A Physical AI course project: a vision-language model turns a mixed-language tabletop instruction into an ordered plan, and a simulated Franka arm executes predefined physical manipulation primitives.
 
-**Status, 2026-10-29:** one complete v2 AI-plus-robot run passed all seven independently rescored milestones: initial sorting, pushing blue outside A, stacking yellow on blue, and carrying the intact pair into B while protecting red. Actual Qwen inference produced the five executed actions plus `done` from the mixed-language instruction and real scene image. This is one formal case after the configuration was frozen, not a general success-rate or multilingual-performance estimate. Ten earlier development failures are recorded separately. The 70.5-second video passed final decoding and visual checks, including the exact Japanese/English/Chinese instruction. The three-page Japanese PDF and sanitized public evidence are checked locally. Code, final media and sanitized evidence are published in the [public repository](https://github.com/Fengmc2001/vla-trial-physical-ai-2026). YouTube upload and course submission remain to be completed.
+**Status, 2026-10-29:** one complete v2 AI-plus-robot run passed all seven independently rescored milestones: initial sorting, pushing blue outside A, stacking yellow on blue, and carrying the intact pair into B while protecting red. Actual Qwen inference produced the five executed actions plus `done` from the mixed-language instruction and real scene image. This is one formal case after the configuration was frozen, not a general success-rate or multilingual-performance estimate. Ten earlier development failures are recorded separately. The 70.5-second video passed final decoding and visual checks, including the exact Japanese/English/Chinese instruction. The revised six-page monochrome Japanese academic report and sanitized public evidence are checked locally. Code, final media and sanitized evidence are published in the [public repository](https://github.com/Fengmc2001/vla-trial-physical-ai-2026). The video has been uploaded to [YouTube](https://www.youtube.com/watch?v=hS34eNkm5VM); the title still needs to match the course account name. Course submission is paused while the revised report is reviewed.
 
 The earlier v1 sorting demonstration is retained separately in `examples/validated_run/`; it is not included in the v2 trial count. Browser execution still requires the selected task's validation, current resource authorization and an available execution lock.
 
@@ -126,7 +126,8 @@ For the earlier v1 task, select `--task configs/tasks/minimal_sort_ja.json`. The
 | `docs/REPORT_TEMPLATE_JA.md` | Report template; placeholders and unperformed work are not final results |
 | `THIRD_PARTY_NOTICES.md` | Component provenance and license evidence |
 | `examples/validated_run/` | Earlier v1 observations, actual model plan and scored trajectory; not evidence of v2 success |
-| `scripts/build_submission_video.py`, `scripts/build_submission_report.py` | CPU-only evidence-checked video and PDF builders |
+| `scripts/build_submission_video.py`, `scripts/build_submission_report.py`, `scripts/build_academic_report.py` | CPU-only evidence-checked media builders; the academic report is the current submission PDF |
+| `docs/ACADEMIC_REPORT_JA.md` | Full Japanese text of the six-page monochrome report |
 
 Create a local source draft with:
 
@@ -136,10 +137,26 @@ Create a local source draft with:
 
 The archive includes application code, tests, task contracts, public instructions and selected evidence. It excludes weights, environments, private settings, internal development notes, machine launchers and raw operational logs. It neither creates a GitHub repository nor uploads anything.
 
-The release locations are [validated v2 evidence](examples/validated_multistep_run/) and [final video/PDF](delivery/). The public v2 copy passes independent rescoring and metadata checks; its original `simulation.mp4` is included. The final video is 70.5 seconds with all robot motion at labeled 2× speed, plus introductory/result cards; initialization and model waiting are omitted with disclosure. The three-page PDF was built from this sanitized evidence and visually checked. To include these final files in the archive's `delivery/` folder, use `scripts/export_source.py --include-delivery`; the option refuses a missing v2 evidence bundle or incomplete final files. Earlier v1 media remains separate.
+The release locations are [validated v2 evidence](examples/validated_multistep_run/) and [final video/PDF](delivery/). The public v2 copy passes independent rescoring and metadata checks; its original `simulation.mp4` is included. The final video is 70.5 seconds with all robot motion at labeled 2× speed, plus introductory/result cards; initialization and model waiting are omitted with disclosure. The six-page academic PDF was built from this sanitized evidence and visually checked. It uses black text, grayscale observations, four numbered figures, three tables, methods, results, discussion and references. The previous three-page report remains available in Git history. To include these final files in the archive's `delivery/` folder, use `scripts/export_source.py --include-delivery`; the option refuses a missing v2 evidence bundle or incomplete final files. Earlier v1 media remains separate.
 
 The earlier v1 video lasts 96.4 seconds and is a separate baseline artifact. The v2 video/PDF use the same completed, independently rescored v2 run. Install `requirements-media.txt` plus FFmpeg/ffprobe to run the evidence-checked builders. The current public v1 example supports inspection and rescoring; it omits the original MP4 and some inference event metadata, so it is not a complete artifact-rebuild bundle. See `docs/EXPERIMENT_PROTOCOL.md` for the public v2 bundle's requirements. Publishing and course submission remain separate from local preparation.
 
 ## Handoff
 
 - 2026-10-29 · Codex · One formal v2 run completed with actual Qwen inference; all seven milestones independently reproduced. The frozen setting uses 25 mm cubes and 50 × 6 × 60 mm finger extensions. Ten earlier development failures and the separate v1 baseline are preserved. Sanitized public evidence and the three-page Japanese PDF are checked. The 70.5-second MP4 passed final decoding, font and visual checks. Local deliverables are in `交付/最终提交/`, mapped to `delivery/` in the release archive. The public GitHub repository has been created and anonymous access verified. The clean exported source passes 170 CPU tests. Next: upload the final video to YouTube and submit the PDF and both URLs to OmniCampus. No physical-hardware validation is claimed.
+
+
+## Rebuild the monochrome academic report
+
+The builder reads saved evidence and extracts recorded frames; it does not start a model, robot or GPU job. With `requirements-media.txt` and FFmpeg installed, run:
+
+```bash
+python scripts/build_academic_report.py \
+  --run-dir examples/validated_multistep_run \
+  --video delivery/PAI最終課題_shigin123.mp4 \
+  --output 交付/論文形式レポート/説明資料_PAI最終課題_shigin123.pdf
+```
+
+On macOS the builder uses the installed Songti serif font. On other systems pass `--font` (and, for a collection, `--font-index`) for an installed TrueType font covering Japanese, Chinese and the report symbols. Fonts are not redistributed. Inspect the rendered output before submission.
+
+- 2026-10-29 · Report revision · Replaced the submission PDF with a six-page monochrome academic report based on the same formal run. Six pages were rendered and inspected; image provenance, numerical agreement, embedded grayscale images and font coverage passed. No new GPU execution was performed. The earlier local report and package remain preserved.

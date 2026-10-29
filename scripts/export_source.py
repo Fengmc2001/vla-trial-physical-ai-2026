@@ -128,9 +128,13 @@ def delivery_sources(root):
         raise SystemExit("Reviewed final delivery directory is not ready")
     patterns = {"video": re.compile(r"PAI最終課題_([A-Za-z0-9_.-]{1,64})\.mp4\Z"),
                 "report": re.compile(r"説明資料_PAI最終課題_([A-Za-z0-9_.-]{1,64})\.pdf\Z")}
+    academic_directory = root / "交付" / "論文形式レポート"
+    if academic_directory.is_symlink():
+        raise SystemExit("Academic report directory must not be a symlink")
     selected = {}
     for kind, pattern in patterns.items():
-        matches = [(path, pattern.fullmatch(path.name)) for path in directory.iterdir() if pattern.fullmatch(path.name)]
+        source_directory = academic_directory if kind == "report" and academic_directory.is_dir() else directory
+        matches = [(path, pattern.fullmatch(path.name)) for path in source_directory.iterdir() if pattern.fullmatch(path.name)]
         if len(matches) != 1:
             raise SystemExit(f"Expected exactly one final {kind} with the course filename in the final delivery directory")
         selected[kind] = matches[0]
@@ -157,7 +161,9 @@ def main():
     # Development plans and draft reports contain internal status and unfinished
     # result fields. Export only the public instructions and marked template.
     sources.extend(root / "docs" / n for n in ("SUBMISSION_CHECKLIST.md", "REPORT_TEMPLATE_JA.md", "USER_GUIDE_ZH.md", "SOURCE_PROVENANCE.md", "EXPERIMENT_PROTOCOL.md"))
-    sources.extend(root / "scripts" / n for n in ("bootstrap.sh", "cpu_check.sh", "start_preview.sh", "start_live.sh", "export_source.py", "build_submission_video.py", "build_submission_report.py"))
+    if (root / "docs" / "ACADEMIC_REPORT_JA.md").is_file():
+        sources.append(root / "docs" / "ACADEMIC_REPORT_JA.md")
+    sources.extend(root / "scripts" / n for n in ("bootstrap.sh", "cpu_check.sh", "start_preview.sh", "start_live.sh", "export_source.py", "build_submission_video.py", "build_submission_report.py", "build_academic_report.py"))
     sources.extend(public_run_sources(root))
     sources.append(root / ".gitignore")
     if (root / "requirements.lock.txt").exists():
