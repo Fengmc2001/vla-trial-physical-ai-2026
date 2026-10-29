@@ -1,0 +1,54 @@
+[
+  {
+    "stage": "approach",
+    "step": 100,
+    "object_id": "blue_block",
+    "target_id": "left_tray"
+  },
+  {
+    "stage": "descend_to_grasp",
+    "step": 400
+  },
+  {
+    "stage": "physical_lift",
+    "step": 770
+  },
+  {
+    "stage": "transport",
+    "step": 1050
+  },
+  {
+    "stage": "descend_to_place",
+    "step": 1350
+  },
+  {
+    "stage": "release_and_retreat",
+    "step": 1700
+  },
+  {
+    "stage": "approach",
+    "step": 2070,
+    "object_id": "yellow_block",
+    "target_id": "right_tray"
+  },
+  {
+    "stage": "descend_to_grasp",
+    "step": 2370
+  },
+  {
+    "stage": "physical_lift",
+    "step": 2740
+  },
+  {
+    "stage": "transport",
+    "step": 3020
+  },
+  {
+    "stage": "descend_to_place",
+    "step": 3320
+  },
+  {
+    "stage": "release_and_retreat",
+    "step": 3670
+  }
+]

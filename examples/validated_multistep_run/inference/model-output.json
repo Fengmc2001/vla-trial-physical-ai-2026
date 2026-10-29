@@ -1,0 +1,20 @@
+{
+  "raw_output": "{\"actions\": [{\"action\": \"pick_place\", \"object_id\": \"blue_block\", \"target_id\": \"left_tray\"}, {\"action\": \"pick_place\", \"object_id\": \"yellow_block\", \"target_id\": \"right_tray\"}, {\"action\": \"push_out\", \"object_id\": \"blue_block\", \"source_target_id\": \"left_tray\"}, {\"action\": \"stack\", \"object_id\": \"yellow_block\", \"support_id\": \"blue_block\"}, {\"action\": \"move_stack\", \"base_id\": \"blue_block\", \"top_id\": \"yellow_block\", \"target_id\": \"right_tray\"}, {\"action\": \"done\"}]}",
+  "image_sha256": "1a4088f26c54b21bb3e05aada95b54bfccc22312cefea806c5678b8268e6720d",
+  "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。\nAnd then please push the blue block out of the A , and put the yellow block B on the block A.\n最后把它们一起放到B区域中。一直都不要动红色那个块。",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "settings": {
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 512,
+    "max_pixels": 65536,
+    "local_files_only": true,
+    "task_mode": "multistep",
+    "memory_cap_mib": 17300,
+    "active_object_ids": [
+      "red_block",
+      "blue_block",
+      "yellow_block"
+    ]
+  }
+}

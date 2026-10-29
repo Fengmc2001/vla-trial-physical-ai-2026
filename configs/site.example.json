@@ -1,0 +1,27 @@
+{
+  "admission_mode": "dedicated_exclusive",
+  "dedicated_exclusive_allocation_confirmed": false,
+  "interactive_enabled": false,
+  "authorization_date_jst": "YYYY-MM-DD",
+  "host": "YOUR_ALLOCATED_HOSTNAME",
+  "operator": "YOUR_OPERATOR_ID",
+  "authorization_reference": "YOUR_CONFIRMED_EXCLUSIVE_GPU_ALLOCATION_REFERENCE",
+  "allowed_gpu_uuids": [
+    "GPU-REPLACE_WITH_SIMULATION_GPU_UUID",
+    "GPU-REPLACE_WITH_DISTINCT_INFERENCE_GPU_UUID"
+  ],
+  "simulation_gpu_uuid": "GPU-REPLACE_WITH_SIMULATION_GPU_UUID",
+  "inference_gpu_uuid": "GPU-REPLACE_WITH_DISTINCT_INFERENCE_GPU_UUID",
+  "gpu_pci_bus_ids": {
+    "GPU-REPLACE_WITH_SIMULATION_GPU_UUID": "REPLACE_WITH_SIMULATION_PCI_BUS_ID",
+    "GPU-REPLACE_WITH_DISTINCT_INFERENCE_GPU_UUID": "REPLACE_WITH_INFERENCE_PCI_BUS_ID"
+  },
+  "max_task_budget_mib": 19456,
+  "notes": [
+    "Copy to ignored configs/site.json only after an operator has independently obtained exclusive GPU allocations.",
+    "This example does not grant permission, reserve hardware or implement a site scheduler.",
+    "The current full runner needs two separately allocated GPUs because simulation remains alive while the model process runs.",
+    "All existing compute processes are refused, including your own. Shared-server co-running requires a reviewed site-specific adapter instead.",
+    "Keep interactive execution disabled until real camera, controller and model validation passes on your host."
+  ]
+}

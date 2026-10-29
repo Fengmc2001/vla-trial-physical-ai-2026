@@ -1,0 +1,191 @@
+[
+  {
+    "object_id": "blue_block",
+    "target_id": "left_tray",
+    "position_before": [
+      0.4199999272823334,
+      0.10000003129243851,
+      0.012472696602344513
+    ],
+    "position_after": [
+      0.46040019392967224,
+      0.25774866342544556,
+      0.022472694516181946
+    ],
+    "placement_verified": true,
+    "lift_verified": true,
+    "controller": "planned transport + vertical contact IK; physical finger force",
+    "verification": "simulator position at final settle; not a perception-only result",
+    "action": "pick_place"
+  },
+  {
+    "object_id": "yellow_block",
+    "target_id": "right_tray",
+    "position_before": [
+      0.559999942779541,
+      0.10000003129243851,
+      0.012472697533667088
+    ],
+    "position_after": [
+      0.4618088901042938,
+      -0.3366136848926544,
+      0.022472694516181946
+    ],
+    "placement_verified": true,
+    "lift_verified": true,
+    "controller": "planned transport + vertical contact IK; physical finger force",
+    "verification": "simulator position at final settle; not a perception-only result",
+    "action": "pick_place"
+  },
+  {
+    "action": "push_out",
+    "object_id": "blue_block",
+    "source_target_id": "left_tray",
+    "position_before": [
+      0.46040019392967224,
+      0.25774866342544556,
+      0.022472696378827095
+    ],
+    "position_after": [
+      0.4606224298477173,
+      0.0817597433924675,
+      0.012472698464989662
+    ],
+    "positions_before": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.46040019392967224,
+        0.25774866342544556,
+        0.022472696378827095
+      ],
+      "yellow_block": [
+        0.4618088901042938,
+        -0.3366136848926544,
+        0.022472694516181946
+      ]
+    },
+    "positions_after": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.4606224298477173,
+        0.0817597433924675,
+        0.012472698464989662
+      ],
+      "yellow_block": [
+        0.4618088901042938,
+        -0.3366136848926544,
+        0.022472694516181946
+      ]
+    },
+    "displacement_m": 0.17598906035085593,
+    "outside_source": true,
+    "push_verified": true,
+    "controller": "closed fingers; bounded horizontal contact IK; independent rigid-body physics"
+  },
+  {
+    "action": "stack",
+    "object_id": "yellow_block",
+    "support_id": "blue_block",
+    "positions_before": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.4606224298477173,
+        0.0817597433924675,
+        0.012472698464989662
+      ],
+      "yellow_block": [
+        0.4618088901042938,
+        -0.3366136848926544,
+        0.022472694516181946
+      ]
+    },
+    "positions_after": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.4606221914291382,
+        0.08175986260175705,
+        0.012445550411939621
+      ],
+      "yellow_block": [
+        0.46050700545310974,
+        0.0817924290895462,
+        0.03739108145236969
+      ]
+    },
+    "lift_verified": true,
+    "relative_xy_m": 0.00011970123307863635,
+    "height_gap_m": 0.02494553104043007,
+    "stack_verified": true,
+    "settle_displacement_m": 0.0,
+    "controller": "physical finger grasp; gravity-supported release onto measured support cube"
+  },
+  {
+    "action": "move_stack",
+    "base_id": "blue_block",
+    "top_id": "yellow_block",
+    "target_id": "right_tray",
+    "positions_before": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.4606221914291382,
+        0.08175986260175705,
+        0.012445550411939621
+      ],
+      "yellow_block": [
+        0.46050700545310974,
+        0.0817924290895462,
+        0.03739108145236969
+      ]
+    },
+    "positions_after": {
+      "red_block": [
+        0.4199999272823334,
+        -0.09999997168779373,
+        0.012472698464989662
+      ],
+      "blue_block": [
+        0.5001625418663025,
+        -0.2968314588069916,
+        0.022445542737841606
+      ],
+      "yellow_block": [
+        0.5000801682472229,
+        -0.2968280613422394,
+        0.04739108309149742
+      ]
+    },
+    "lift_heights_m": {
+      "blue_block": 0.16282746568322182,
+      "yellow_block": 0.16282719373703003
+    },
+    "stack_lift_verified": true,
+    "both_in_target": true,
+    "placement_verified": true,
+    "relative_xy_m": 8.244365280002937e-05,
+    "height_gap_m": 0.024945540353655815,
+    "stack_verified": true,
+    "settle_displacement_m": 0.0,
+    "controller": "physical finger-pad grasp; slow Cartesian arm PD; no object weld or fixed joint",
+    "finger_extensions_enabled": true
+  }
+]

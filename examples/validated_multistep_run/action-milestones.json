@@ -1,0 +1,53 @@
+[
+  {
+    "action": {
+      "action": "pick_place",
+      "object_id": "blue_block",
+      "target_id": "left_tray"
+    },
+    "started_s": 0.0,
+    "completed": true,
+    "ended_s": 19.8
+  },
+  {
+    "action": {
+      "action": "pick_place",
+      "object_id": "yellow_block",
+      "target_id": "right_tray"
+    },
+    "started_s": 19.8,
+    "completed": true,
+    "ended_s": 39.6
+  },
+  {
+    "action": {
+      "action": "push_out",
+      "object_id": "blue_block",
+      "source_target_id": "left_tray"
+    },
+    "started_s": 39.6,
+    "completed": true,
+    "ended_s": 58.5
+  },
+  {
+    "action": {
+      "action": "stack",
+      "object_id": "yellow_block",
+      "support_id": "blue_block"
+    },
+    "started_s": 58.5,
+    "completed": true,
+    "ended_s": 80.25
+  },
+  {
+    "action": {
+      "action": "move_stack",
+      "base_id": "blue_block",
+      "top_id": "yellow_block",
+      "target_id": "right_tray"
+    },
+    "started_s": 80.25,
+    "completed": true,
+    "ended_s": 119.0
+  }
+]

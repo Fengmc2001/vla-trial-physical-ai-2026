@@ -1,0 +1,9 @@
+{
+  "project": {"name": "尝试VLA", "phase": "PREPARATION_ONLY", "account_name": "YOUR_OMNICAMPUS_ACCOUNT"},
+  "runtime": {"enabled": false, "gpu_uuid": "", "approval_receipt": "", "max_actions": 6, "max_model_rounds": 3, "max_runtime_seconds": 180},
+  "model": {"path": "", "device": "cuda:0", "dtype": "bfloat16", "max_new_tokens": 256, "max_pixels": 262144, "local_files_only": true},
+  "simulation": {"dt": 0.01, "width": 640, "height": 480, "fps": 10, "max_video_frames": 1800, "render_device_verified": false},
+  "paths": {"output_dir": "outputs"},
+  "ui": {"host": "127.0.0.1", "port": 7866},
+  "scene": {"protected_ids": ["red_block"], "objects": ["red_block", "blue_block", "yellow_block", "green_block"], "targets": ["left_tray", "right_tray"]}
+}

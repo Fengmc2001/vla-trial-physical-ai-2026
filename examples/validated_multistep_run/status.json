@@ -1,0 +1,158 @@
+{
+  "phase": "completed",
+  "stage": "full",
+  "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。\nAnd then please push the blue block out of the A , and put the yellow block B on the block A.\n最后把它们一起放到B区域中。一直都不要动红色那个块。",
+  "video_finalized": true,
+  "started_at": "2026-10-29T09:08:08.488231+00:00",
+  "action": {
+    "action": "move_stack",
+    "base_id": "blue_block",
+    "top_id": "yellow_block",
+    "target_id": "right_tray"
+  },
+  "evaluation": {
+    "task_id": "multistep_stack_mixed_v1",
+    "evaluation_scope": "standard_task",
+    "success": true,
+    "whole_task_success": true,
+    "evaluation_complete": true,
+    "scoring_source": "predeclared_contract_and_executed_trajectory_not_model_plan",
+    "contract": {
+      "schema_version": 2,
+      "task_id": "multistep_stack_mixed_v1",
+      "task_mode": "multistep",
+      "language": "ja+en+zh",
+      "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。\nAnd then please push the blue block out of the A , and put the yellow block B on the block A.\n最后把它们一起放到B区域中。一直都不要动红色那个块。",
+      "interpretation": "First place blue in A and yellow in B; push blue outside A; place yellow on blue; move both blocks together to B while preserving the stack. Red must remain unmoved throughout.",
+      "active_object_ids": [
+        "red_block",
+        "blue_block",
+        "yellow_block"
+      ],
+      "protected_ids": [
+        "red_block"
+      ],
+      "base_id": "blue_block",
+      "top_id": "yellow_block",
+      "initial_placements": {
+        "blue_block": "left_tray",
+        "yellow_block": "right_tray"
+      },
+      "push_source_target_id": "left_tray",
+      "final_target_id": "right_tray",
+      "targets": {
+        "left_tray": {
+          "label": "A",
+          "center": [
+            0.5,
+            0.3,
+            0.0225
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.006
+          ],
+          "surface_half_size_xy": [
+            0.09,
+            0.09
+          ]
+        },
+        "right_tray": {
+          "label": "B",
+          "center": [
+            0.5,
+            -0.3,
+            0.0225
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.006
+          ],
+          "surface_half_size_xy": [
+            0.09,
+            0.09
+          ]
+        }
+      },
+      "success_criteria": {
+        "stable_duration_seconds": 0.5,
+        "min_stable_samples": 3,
+        "max_stable_position_spread_m": 0.005,
+        "protected_max_displacement_m": 0.01,
+        "max_sample_gap_seconds": 0.2,
+        "block_half_width_m": 0.0125,
+        "block_height_m": 0.025,
+        "outside_tray_clearance_m": 0.005,
+        "ground_center_z_m": 0.0125,
+        "ground_center_z_tolerance_m": 0.006,
+        "stack_xy_tolerance_m": 0.008,
+        "stack_z_tolerance_m": 0.006,
+        "push_max_center_rise_m": 0.03,
+        "push_min_planar_displacement_m": 0.04
+      }
+    },
+    "sample_count": 1202,
+    "action_count": 5,
+    "protection_scope": "all_recorded_samples_relative_to_initial_positions",
+    "telemetry_limit": "sampled positions do not prove contact forces or unobserved motion",
+    "violations": [],
+    "milestone_results": {
+      "initial_place_blue_block": {
+        "passed": true,
+        "ended_s": 19.8,
+        "stable_samples": 6
+      },
+      "initial_place_yellow_block": {
+        "passed": true,
+        "ended_s": 39.6,
+        "stable_samples": 6
+      },
+      "initial_sort": {
+        "passed": true,
+        "ended_s": 39.6
+      },
+      "push_blue_outside_a": {
+        "passed": true,
+        "ended_s": 58.5,
+        "maximum_center_rise_m": 7.292814552783966e-05,
+        "planar_displacement_m": 0.17598906035085593
+      },
+      "yellow_stacked_on_blue": {
+        "passed": true,
+        "ended_s": 80.25,
+        "stable_samples": 7
+      },
+      "stack_preserved_during_transport": {
+        "passed": true,
+        "sampled_instants": 389,
+        "started_s": 80.25,
+        "ended_s": 119.0
+      },
+      "intact_stack_in_b": {
+        "passed": true,
+        "stable_samples": 6,
+        "final_base_position": [
+          0.5001625418663025,
+          -0.2968314588069916,
+          0.022445542737841606
+        ],
+        "final_top_position": [
+          0.5000801682472229,
+          -0.2968280613422394,
+          0.04739108309149742
+        ]
+      }
+    },
+    "protected_results": {
+      "red_block": {
+        "maximum_displacement_m": 1.862645149230957e-09,
+        "passed": true
+      }
+    }
+  },
+  "model_used": true,
+  "resource_peak_measured_mib": 873.0,
+  "finished_at": "2026-10-29T09:11:50.823090+00:00"
+}

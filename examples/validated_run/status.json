@@ -1,0 +1,118 @@
+{
+  "phase": "completed",
+  "stage": "full",
+  "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。",
+  "video_finalized": true,
+  "started_at": "2026-10-29T07:18:05.318466+00:00",
+  "action": {
+    "action": "pick_place",
+    "object_id": "yellow_block",
+    "target_id": "right_tray"
+  },
+  "evaluation": {
+    "task_id": "minimal_sort_ja_v1",
+    "success": true,
+    "whole_task_success": true,
+    "evaluation_complete": true,
+    "scoring_source": "predeclared_contract_not_model_output",
+    "protection_scope": "all_recorded_samples_relative_to_initial_positions",
+    "contract": {
+      "schema_version": 1,
+      "task_id": "minimal_sort_ja_v1",
+      "language": "ja",
+      "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。",
+      "expected_placements": {
+        "blue_block": "left_tray",
+        "yellow_block": "right_tray"
+      },
+      "protected_ids": [
+        "red_block"
+      ],
+      "ignored_ids": [
+        "green_block"
+      ],
+      "targets": {
+        "left_tray": {
+          "label": "A",
+          "center": [
+            0.5,
+            0.3,
+            0.03
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.008
+          ]
+        },
+        "right_tray": {
+          "label": "B",
+          "center": [
+            0.5,
+            -0.3,
+            0.03
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.008
+          ]
+        }
+      },
+      "success_criteria": {
+        "stable_duration_seconds": 0.5,
+        "min_stable_samples": 3,
+        "max_stable_position_spread_m": 0.005,
+        "protected_max_displacement_m": 0.01,
+        "max_sample_gap_seconds": 0.2
+      }
+    },
+    "violations": [],
+    "goal_results": {
+      "blue_block": {
+        "target_id": "left_tray",
+        "final_position": [
+          0.454464316368103,
+          0.25776079297065735,
+          0.029892243444919586
+        ],
+        "final_inside_target": true,
+        "stable_inside_target": true,
+        "stable_position_spread_upper_bound_m": 0.0,
+        "stable_position": true,
+        "passed": true
+      },
+      "yellow_block": {
+        "target_id": "right_tray",
+        "final_position": [
+          0.45452365279197693,
+          -0.33684906363487244,
+          0.029892243444919586
+        ],
+        "final_inside_target": true,
+        "stable_inside_target": true,
+        "stable_position_spread_upper_bound_m": 0.0,
+        "stable_position": true,
+        "passed": true
+      }
+    },
+    "protected_results": {
+      "red_block": {
+        "max_displacement_m": 0.0,
+        "limit_m": 0.01,
+        "passed": true
+      }
+    },
+    "sample_count": 405,
+    "stable_window": {
+      "start_elapsed_s": 39.9,
+      "end_elapsed_s": 40.4,
+      "sample_count": 6,
+      "complete": true
+    },
+    "evaluation_scope": "standard_task"
+  },
+  "model_used": true,
+  "resource_peak_measured_mib": 873.0,
+  "finished_at": "2026-10-29T07:20:55.846844+00:00"
+}

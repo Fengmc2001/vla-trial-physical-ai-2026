@@ -1,0 +1,36 @@
+{
+  "source": "QWEN_REAL_INFERENCE",
+  "plan": {
+    "actions": [
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "yellow_block",
+        "target_id": "right_tray"
+      },
+      {
+        "action": "push_out",
+        "object_id": "blue_block",
+        "source_target_id": "left_tray"
+      },
+      {
+        "action": "stack",
+        "object_id": "yellow_block",
+        "support_id": "blue_block"
+      },
+      {
+        "action": "move_stack",
+        "base_id": "blue_block",
+        "top_id": "yellow_block",
+        "target_id": "right_tray"
+      },
+      {
+        "action": "done"
+      }
+    ]
+  }
+}

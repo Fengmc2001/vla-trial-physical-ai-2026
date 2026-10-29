@@ -1,0 +1,10 @@
+# Linux x86_64 / Python 3.11. Installed into a new venv, never an existing research environment.
+# Resolve these two against the official CUDA 12.8 index (uv --torch-backend cu128).
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+transformers==5.12.0
+accelerate==1.14.0
+genesis-world==1.4.4
+gradio==6.30.0
+imageio-ffmpeg==0.6.0
+pytest==8.4.2

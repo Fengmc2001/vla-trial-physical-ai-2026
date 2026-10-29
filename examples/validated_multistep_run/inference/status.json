@@ -1,0 +1,42 @@
+{
+  "phase": "completed",
+  "stage": "infer",
+  "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。\nAnd then please push the blue block out of the A , and put the yellow block B on the block A.\n最后把它们一起放到B区域中。一直都不要动红色那个块。",
+  "video_finalized": false,
+  "started_at": "2026-10-29T09:09:23.560995+00:00",
+  "plan": {
+    "actions": [
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "yellow_block",
+        "target_id": "right_tray"
+      },
+      {
+        "action": "push_out",
+        "object_id": "blue_block",
+        "source_target_id": "left_tray"
+      },
+      {
+        "action": "stack",
+        "object_id": "yellow_block",
+        "support_id": "blue_block"
+      },
+      {
+        "action": "move_stack",
+        "base_id": "blue_block",
+        "top_id": "yellow_block",
+        "target_id": "right_tray"
+      },
+      {
+        "action": "done"
+      }
+    ]
+  },
+  "resource_peak_measured_mib": 17616.0,
+  "finished_at": "2026-10-29T09:10:44.553489+00:00"
+}

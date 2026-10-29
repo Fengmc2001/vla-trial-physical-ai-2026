@@ -1,0 +1,19 @@
+{
+  "raw_output": "{\"actions\": [{\"action\": \"pick_place\", \"object_id\": \"blue_block\", \"target_id\": \"left_tray\"}, {\"action\": \"pick_place\", \"object_id\": \"yellow_block\", \"target_id\": \"right_tray\"}, {\"action\": \"done\"}]}",
+  "image_sha256": "ca4aef12b8f38835ef2525eb4fe9b80fb00db73a3e52d0af94a1dc5148400c09",
+  "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "settings": {
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 192,
+    "max_pixels": 65536,
+    "local_files_only": true,
+    "memory_cap_mib": 17300,
+    "active_object_ids": [
+      "red_block",
+      "blue_block",
+      "yellow_block"
+    ]
+  }
+}

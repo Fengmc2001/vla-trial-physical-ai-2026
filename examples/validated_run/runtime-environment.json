@@ -1,0 +1,13 @@
+{
+  "python": "3.11.15",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "genesis-world": "1.4.4",
+    "transformers": "5.12.0",
+    "gradio": "6.30.0"
+  },
+  "admitted_gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "resource_budget_mib": 6144,
+  "physics_backend": "cpu"
+}
