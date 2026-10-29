@@ -1,0 +1,32 @@
+[
+  {
+    "action": {
+      "action": "pick_place",
+      "object_id": "blue_block",
+      "target_id": "left_tray"
+    },
+    "started_s": 0.0,
+    "completed": true,
+    "ended_s": 19.8
+  },
+  {
+    "action": {
+      "action": "pick_place",
+      "object_id": "blue_block",
+      "target_id": "left_tray"
+    },
+    "started_s": 19.8,
+    "completed": true,
+    "ended_s": 39.4
+  },
+  {
+    "action": {
+      "action": "pick_place",
+      "object_id": "blue_block",
+      "target_id": "left_tray"
+    },
+    "started_s": 39.4,
+    "completed": true,
+    "ended_s": 59.0
+  }
+]

@@ -160,7 +160,7 @@ The completed local submission video is 70.5 seconds. It preserves the same
 run's full 121-second raw recording at labeled 2× speed, with ten seconds of
 introductory/result cards. Initialization and model waiting are disclosed
 omissions. The final video passed full decoding and visual review after its title-font fix;
-the exact Japanese/English/Chinese instruction is readable. All six pages of the revised monochrome academic PDF were rendered and visually reviewed. These artifact checks do not mean YouTube or OmniCampus submission
+the exact Japanese/English/Chinese instruction is readable. All four pages of the current concise monochrome explanation were rendered and visually reviewed. These artifact checks do not mean YouTube or OmniCampus submission
 has occurred.
 
 Use one identified real run for the entire robot sequence. Introductory/result
@@ -179,9 +179,16 @@ are separate states.
 
 ## Public release
 
-The completed code, sanitized evidence, 70.5-second final video and revised six-page monochrome report are published at https://github.com/Fengmc2001/vla-trial-physical-ai-2026. Public visibility and anonymous access were checked. The clean export passed 170 CPU tests; a fresh GPU-machine reproduction has not been claimed. The user has uploaded the video to https://www.youtube.com/watch?v=hS34eNkm5VM. OmniCampus submission remains pending while the report is reviewed; the video title still needs to match the account name.
+The completed code, sanitized evidence, 70.5-second final video and current four-page monochrome explanation are published at https://github.com/Fengmc2001/vla-trial-physical-ai-2026. Public visibility and anonymous access were checked. The clean export passed 170 CPU tests; a fresh GPU-machine reproduction has not been claimed. The user has uploaded the video to https://www.youtube.com/watch?v=hS34eNkm5VM. OmniCampus submission remains pending while the report is reviewed; the video title still needs to match the account name.
 
 
 ## Monochrome academic report
 
 The revised PDF retains the same genuine run and numerical results. It contains four numbered figures and three tables, with system architecture, actual grayscale before/after images, the recorded manipulation sequence, and plotted trajectories. Figure annotations project saved coordinates through the recorded fixed camera; crops and times are disclosed. No generated replacement scenes or new robot trials are used. The original report is retained locally and in Git history.
+
+
+## Current concise explanation and additional repetition case
+
+The current course PDF is four pages and is explained by the editable source in `report/`. It replaces the six-page academic-style report as the submission artifact. The retained detailed report is historical.
+
+For the new instruction 抓起蓝色方块然后放下。重复三回, actual Qwen inference returned three identical blue-to-A `pick_place` actions followed by `done`. All three manipulations completed, and each had verified lift and placement. Each successor read the updated scene position, matching the previous result. This run is `custom_task_unscored` with `success=null`; it is not a second successful instance of the fixed five-action task. Core model/parser/execution/controller hashes match the earlier run; `admission.py` differs. An additional recorded response missing `done` was rejected before any `moving` phase. These selected examples do not estimate a general success rate.

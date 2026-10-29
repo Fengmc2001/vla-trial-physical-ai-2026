@@ -1,0 +1,59 @@
+[
+  {
+    "object_id": "blue_block",
+    "target_id": "left_tray",
+    "position_before": [
+      0.4199999272823334,
+      0.10000003129243851,
+      0.012472696602344513
+    ],
+    "position_after": [
+      0.4604046642780304,
+      0.25774794816970825,
+      0.022472696378827095
+    ],
+    "placement_verified": true,
+    "lift_verified": true,
+    "controller": "planned transport + vertical contact IK; physical finger force",
+    "verification": "simulator position at final settle; not a perception-only result",
+    "action": "pick_place"
+  },
+  {
+    "object_id": "blue_block",
+    "target_id": "left_tray",
+    "position_before": [
+      0.4604046642780304,
+      0.25774794816970825,
+      0.022472696378827095
+    ],
+    "position_after": [
+      0.46032628417015076,
+      0.2578093111515045,
+      0.022472694516181946
+    ],
+    "placement_verified": true,
+    "lift_verified": true,
+    "controller": "planned transport + vertical contact IK; physical finger force",
+    "verification": "simulator position at final settle; not a perception-only result",
+    "action": "pick_place"
+  },
+  {
+    "object_id": "blue_block",
+    "target_id": "left_tray",
+    "position_before": [
+      0.46032628417015076,
+      0.2578093111515045,
+      0.022472694516181946
+    ],
+    "position_after": [
+      0.4603475034236908,
+      0.2578263282775879,
+      0.022472694516181946
+    ],
+    "placement_verified": true,
+    "lift_verified": true,
+    "controller": "planned transport + vertical contact IK; physical finger force",
+    "verification": "simulator position at final settle; not a perception-only result",
+    "action": "pick_place"
+  }
+]

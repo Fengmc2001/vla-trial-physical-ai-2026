@@ -1,0 +1,30 @@
+{
+  "image": "final.png",
+  "step": 6100,
+  "simulation_seconds": 61.0,
+  "object_positions": {
+    "red_block": [
+      0.4199999272823334,
+      -0.09999997168779373,
+      0.012472698464989662
+    ],
+    "blue_block": [
+      0.4603475034236908,
+      0.2578263282775879,
+      0.022472694516181946
+    ],
+    "yellow_block": [
+      0.559999942779541,
+      0.10000003129243851,
+      0.012472698464989662
+    ]
+  },
+  "hand_position": [
+    0.4582333266735077,
+    0.2589217722415924,
+    0.31454646587371826
+  ],
+  "physics_backend": "cpu",
+  "renderer": "rasterizer",
+  "evidence": "actual simulator camera; object coordinates are privileged simulator measurements"
+}

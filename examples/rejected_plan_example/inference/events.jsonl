@@ -1,0 +1,3 @@
+{"phase": "loading_model", "at": "2026-10-29T11:24:43.271516+00:00", "wall_elapsed_s": 48.419}
+{"phase": "inferencing", "at": "2026-10-29T11:25:37.061168+00:00", "wall_elapsed_s": 102.208}
+{"phase": "failed", "at": "2026-10-29T11:25:46.014759+00:00", "wall_elapsed_s": 111.162, "error": "PlanValidationError: Plan must terminate with done."}

@@ -1,0 +1,20 @@
+{
+  "raw_output": "{\"actions\": [{\"action\": \"pick_place\", \"object_id\": \"blue_block\", \"target_id\": \"left_tray\"}, {\"action\": \"pick_place\", \"object_id\": \"blue_block\", \"target_id\": \"right_tray\"}, {\"action\": \"pick_place\", \"object_id\": \"blue_block\", \"target_id\": \"left_tray\"}]}",
+  "image_sha256": "1a4088f26c54b21bb3e05aada95b54bfccc22312cefea806c5678b8268e6720d",
+  "instruction": "抓起蓝色方块，重复三回",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "settings": {
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "max_new_tokens": 512,
+    "max_pixels": 65536,
+    "local_files_only": true,
+    "task_mode": "multistep",
+    "memory_cap_mib": 17300,
+    "active_object_ids": [
+      "red_block",
+      "blue_block",
+      "yellow_block"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "image": "a-stack.png",
+    "task_elapsed_s": 80.2,
+    "raw_video_pts_s": 81.10000000000001,
+    "sample_elapsed_s": 80.2,
+    "crop_box": [
+      300,
+      210,
+      730,
+      660
+    ],
+    "mode": "L",
+    "sha256": "849569e080db70180b3a1e71e8a9d21ed6506f6d011f44053aef510949ea4f0d"
+  },
+  {
+    "image": "a-final.png",
+    "task_elapsed_s": 120,
+    "raw_video_pts_s": 120.9,
+    "sample_elapsed_s": 120.0,
+    "crop_box": [
+      300,
+      210,
+      730,
+      660
+    ],
+    "mode": "L",
+    "sha256": "f66911d387bc67c42be355e7984b801bb21d8f490632ba2e895092e5387613b3"
+  },
+  {
+    "image": "b-lift-1.png",
+    "task_elapsed_s": 11.8,
+    "raw_video_pts_s": 12.700000000000001,
+    "sample_elapsed_s": 11.8,
+    "crop_box": [
+      300,
+      210,
+      730,
+      660
+    ],
+    "mode": "L",
+    "sha256": "bf77243dd34e4128ad69229579995faac4e987936b4e3050c2ccab836d2efcac"
+  },
+  {
+    "image": "b-lift-2.png",
+    "task_elapsed_s": 32.6,
+    "raw_video_pts_s": 33.5,
+    "sample_elapsed_s": 32.6,
+    "crop_box": [
+      300,
+      210,
+      730,
+      660
+    ],
+    "mode": "L",
+    "sha256": "bf7572739e1b8b6a5c81813af6612ca7a44fb40c135ef0d9a6a840bbe30b832e"
+  },
+  {
+    "image": "b-lift-3.png",
+    "task_elapsed_s": 52.2,
+    "raw_video_pts_s": 53.1,
+    "sample_elapsed_s": 52.2,
+    "crop_box": [
+      300,
+      210,
+      730,
+      660
+    ],
+    "mode": "L",
+    "sha256": "7bb190ccfd09040e774109846c4721da2600fb33ab53fa0759cde38febadf54e"
+  },
+  {
+    "image": "initial.png",
+    "source": "examples/validated_multistep_run/initial.png",
+    "image_mode": "L",
+    "annotation": "recorded positions projected through the fixed camera",
+    "sha256": "eeddc4eeebd650a14605fb184a7ddf1f97d95c7fe4fcc83ab643d3f4ce3e1a81"
+  }
+]

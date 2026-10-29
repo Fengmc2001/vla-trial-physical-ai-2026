@@ -1,0 +1,4 @@
+{"phase": "building_scene", "at": "2026-10-29T11:22:27.977898+00:00", "wall_elapsed_s": 50.006, "instruction": "抓起蓝色方块，重复三回"}
+{"phase": "scene_ready", "at": "2026-10-29T11:23:54.116323+00:00", "wall_elapsed_s": 136.144}
+{"phase": "waiting_for_qwen", "at": "2026-10-29T11:23:54.176184+00:00", "wall_elapsed_s": 136.204}
+{"phase": "failed", "at": "2026-10-29T11:25:49.080581+00:00", "wall_elapsed_s": 251.108, "error": "RuntimeError: Qwen stage exited with 1; see inference.log. No automatic retry."}

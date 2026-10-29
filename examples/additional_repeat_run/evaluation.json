@@ -1,0 +1,108 @@
+{
+  "evaluation_scope": "custom_task_unscored",
+  "success": null,
+  "whole_task_success": null,
+  "instruction": "抓起蓝色方块然后放下。重复三回",
+  "note": "Custom instruction was executed; fixed standard placements cannot score its meaning.",
+  "standard_contract_comparison": {
+    "task_id": "multistep_stack_mixed_v1",
+    "evaluation_scope": "ordered_multistep_task",
+    "success": false,
+    "whole_task_success": false,
+    "evaluation_complete": false,
+    "scoring_source": "predeclared_contract_and_executed_trajectory_not_model_plan",
+    "contract": {
+      "schema_version": 2,
+      "task_id": "multistep_stack_mixed_v1",
+      "task_mode": "multistep",
+      "language": "ja+en+zh",
+      "instruction": "青いブロックをトレーAへ、黄色いブロックをトレーBへ移してください。赤いブロックは動かさないでください。\nAnd then please push the blue block out of the A , and put the yellow block B on the block A.\n最后把它们一起放到B区域中。一直都不要动红色那个块。",
+      "interpretation": "First place blue in A and yellow in B; push blue outside A; place yellow on blue; move both blocks together to B while preserving the stack. Red must remain unmoved throughout.",
+      "active_object_ids": [
+        "red_block",
+        "blue_block",
+        "yellow_block"
+      ],
+      "protected_ids": [
+        "red_block"
+      ],
+      "base_id": "blue_block",
+      "top_id": "yellow_block",
+      "initial_placements": {
+        "blue_block": "left_tray",
+        "yellow_block": "right_tray"
+      },
+      "push_source_target_id": "left_tray",
+      "final_target_id": "right_tray",
+      "targets": {
+        "left_tray": {
+          "label": "A",
+          "center": [
+            0.5,
+            0.3,
+            0.0225
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.006
+          ],
+          "surface_half_size_xy": [
+            0.09,
+            0.09
+          ]
+        },
+        "right_tray": {
+          "label": "B",
+          "center": [
+            0.5,
+            -0.3,
+            0.0225
+          ],
+          "center_tolerance": [
+            0.07,
+            0.07,
+            0.006
+          ],
+          "surface_half_size_xy": [
+            0.09,
+            0.09
+          ]
+        }
+      },
+      "success_criteria": {
+        "stable_duration_seconds": 0.5,
+        "min_stable_samples": 3,
+        "max_stable_position_spread_m": 0.005,
+        "protected_max_displacement_m": 0.01,
+        "max_sample_gap_seconds": 0.2,
+        "block_half_width_m": 0.0125,
+        "block_height_m": 0.025,
+        "outside_tray_clearance_m": 0.005,
+        "ground_center_z_m": 0.0125,
+        "ground_center_z_tolerance_m": 0.006,
+        "stack_xy_tolerance_m": 0.008,
+        "stack_z_tolerance_m": 0.006,
+        "push_max_center_rise_m": 0.03,
+        "push_min_planar_displacement_m": 0.04
+      }
+    },
+    "sample_count": 601,
+    "action_count": 3,
+    "protection_scope": "all_recorded_samples_relative_to_initial_positions",
+    "telemetry_limit": "sampled positions do not prove contact forces or unobserved motion",
+    "violations": [
+      {
+        "code": "invalid_execution_milestones",
+        "detail": "Exactly five executed manipulation milestones are required."
+      }
+    ],
+    "milestone_results": {},
+    "protected_results": {
+      "red_block": {
+        "maximum_displacement_m": 1.862645149230957e-09,
+        "passed": true
+      }
+    }
+  }
+}

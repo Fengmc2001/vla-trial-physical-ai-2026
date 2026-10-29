@@ -121,6 +121,39 @@ def public_run_sources(root):
     return files
 
 
+def additional_case_sources(root):
+    """Selected user-generated evidence; custom cases are never preset passes."""
+    files = []
+    repeat = root / "examples" / "additional_repeat_run"
+    if repeat.exists():
+        status = read_evidence_json(repeat / "status.json")
+        evaluation = read_evidence_json(repeat / "evaluation.json")
+        actions = read_evidence_json(repeat / "actions.json")
+        if (status.get("phase") != "completed" or status.get("model_used") is not True
+                or evaluation.get("evaluation_scope") != "custom_task_unscored"
+                or evaluation.get("success") is not None or len(actions) != 3
+                or any(action.get("action") != "pick_place" or action.get("object_id") != "blue_block"
+                       or action.get("lift_verified") is not True or action.get("placement_verified") is not True for action in actions)):
+            raise SystemExit("Additional repetition evidence must remain a completed but separately unscored custom case")
+        files.extend(repeat / name for name in PUBLIC_RUN_FILES if (repeat / name).is_file())
+    rejected = root / "examples" / "rejected_plan_example"
+    if rejected.exists():
+        files.extend(rejected / name for name in (
+            "README.md", "status.json", "events.jsonl", "source-manifest.json",
+            "inference/model-output.json", "inference/status.json", "inference/events.jsonl") if (rejected / name).is_file())
+    return files
+
+
+def concise_report_sources(root):
+    directory = root / "交付" / "4ページ説明資料"
+    if not directory.is_dir():
+        return []
+    names = ("main.tex", "data.tex", "README.md", "figure-sources.json", "images/initial.png",
+             "images/a-stack.png", "images/a-final.png", "images/b-lift-1.png",
+             "images/b-lift-2.png", "images/b-lift-3.png")
+    return [(directory / name, "report/" + name) for name in names]
+
+
 def delivery_sources(root):
     """Optional reviewed final files only; never walk arbitrary output trees."""
     directory = root / "交付" / "最终提交"
@@ -128,7 +161,8 @@ def delivery_sources(root):
         raise SystemExit("Reviewed final delivery directory is not ready")
     patterns = {"video": re.compile(r"PAI最終課題_([A-Za-z0-9_.-]{1,64})\.mp4\Z"),
                 "report": re.compile(r"説明資料_PAI最終課題_([A-Za-z0-9_.-]{1,64})\.pdf\Z")}
-    academic_directory = root / "交付" / "論文形式レポート"
+    concise_directory = root / "交付" / "4ページ説明資料"
+    academic_directory = concise_directory if concise_directory.is_dir() else root / "交付" / "論文形式レポート"
     if academic_directory.is_symlink():
         raise SystemExit("Academic report directory must not be a symlink")
     selected = {}
@@ -163,14 +197,16 @@ def main():
     sources.extend(root / "docs" / n for n in ("SUBMISSION_CHECKLIST.md", "REPORT_TEMPLATE_JA.md", "USER_GUIDE_ZH.md", "SOURCE_PROVENANCE.md", "EXPERIMENT_PROTOCOL.md"))
     if (root / "docs" / "ACADEMIC_REPORT_JA.md").is_file():
         sources.append(root / "docs" / "ACADEMIC_REPORT_JA.md")
-    sources.extend(root / "scripts" / n for n in ("bootstrap.sh", "cpu_check.sh", "start_preview.sh", "start_live.sh", "export_source.py", "build_submission_video.py", "build_submission_report.py", "build_academic_report.py"))
+    sources.extend(root / "scripts" / n for n in ("bootstrap.sh", "cpu_check.sh", "start_preview.sh", "start_live.sh", "export_source.py", "build_submission_video.py", "build_submission_report.py", "build_academic_report.py", "build_action_report_data.py"))
     sources.extend(public_run_sources(root))
+    sources.extend(additional_case_sources(root))
     sources.append(root / ".gitignore")
     if (root / "requirements.lock.txt").exists():
         sources.append(root / "requirements.lock.txt")
     checked = {}
     private_prefixes = (b"/nas/" + b"data_", b"/" + b"Users/", b"/" + b"home/")
     entries = [(path, str(path.relative_to(root))) for path in sorted(set(sources))]
+    entries.extend(concise_report_sources(root))
     if args.include_delivery:
         if not (root / "examples/validated_multistep_run").is_dir():
             raise SystemExit("Final delivery inclusion requires the independently checked public v2 bundle first")

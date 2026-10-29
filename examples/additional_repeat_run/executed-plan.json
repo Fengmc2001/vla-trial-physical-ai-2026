@@ -1,0 +1,25 @@
+{
+  "source": "QWEN_REAL_INFERENCE",
+  "plan": {
+    "actions": [
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "done"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "failed",
+  "stage": "infer",
+  "instruction": "抓起蓝色方块，重复三回",
+  "video_finalized": false,
+  "started_at": "2026-10-29T11:23:54.833638+00:00",
+  "error": "PlanValidationError: Plan must terminate with done.",
+  "resource_peak_measured_mib": 17614.0,
+  "finished_at": "2026-10-29T11:25:46.074097+00:00"
+}

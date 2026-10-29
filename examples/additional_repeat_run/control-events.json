@@ -1,0 +1,147 @@
+[
+  {
+    "stage": "physical_finger_extensions",
+    "step": 0,
+    "pad_size_m": [
+      0.05,
+      0.006,
+      0.06
+    ],
+    "hand_local_z_m": [
+      0.11,
+      0.17
+    ],
+    "added_mass_kg_per_finger": 0.0198,
+    "grasp_hand_offset_m": 0.165,
+    "manipulated_objects_attached": false
+  },
+  {
+    "stage": "approach",
+    "step": 100,
+    "object_id": "blue_block",
+    "target_id": "left_tray"
+  },
+  {
+    "stage": "descend_to_grasp",
+    "step": 400
+  },
+  {
+    "stage": "gentle_grasp_begin",
+    "step": 620,
+    "finger_positions": [
+      0.03999997675418854,
+      0.039999980479478836
+    ],
+    "target_positions": [
+      0.0115,
+      0.0115
+    ],
+    "ramp_steps": 100
+  },
+  {
+    "stage": "gentle_grasp_ready_for_force",
+    "step": 770
+  },
+  {
+    "stage": "physical_lift",
+    "step": 870
+  },
+  {
+    "stage": "transport",
+    "step": 1100
+  },
+  {
+    "stage": "descend_to_place",
+    "step": 1400
+  },
+  {
+    "stage": "release_and_retreat",
+    "step": 1710
+  },
+  {
+    "stage": "approach",
+    "step": 2080,
+    "object_id": "blue_block",
+    "target_id": "left_tray"
+  },
+  {
+    "stage": "descend_to_grasp",
+    "step": 2380
+  },
+  {
+    "stage": "gentle_grasp_begin",
+    "step": 2590,
+    "finger_positions": [
+      0.03999992087483406,
+      0.03999995067715645
+    ],
+    "target_positions": [
+      0.0115,
+      0.0115
+    ],
+    "ramp_steps": 100
+  },
+  {
+    "stage": "gentle_grasp_ready_for_force",
+    "step": 2740
+  },
+  {
+    "stage": "physical_lift",
+    "step": 2840
+  },
+  {
+    "stage": "transport",
+    "step": 3060
+  },
+  {
+    "stage": "descend_to_place",
+    "step": 3360
+  },
+  {
+    "stage": "release_and_retreat",
+    "step": 3670
+  },
+  {
+    "stage": "approach",
+    "step": 4040,
+    "object_id": "blue_block",
+    "target_id": "left_tray"
+  },
+  {
+    "stage": "descend_to_grasp",
+    "step": 4340
+  },
+  {
+    "stage": "gentle_grasp_begin",
+    "step": 4550,
+    "finger_positions": [
+      0.03999992460012436,
+      0.03999995440244675
+    ],
+    "target_positions": [
+      0.0115,
+      0.0115
+    ],
+    "ramp_steps": 100
+  },
+  {
+    "stage": "gentle_grasp_ready_for_force",
+    "step": 4700
+  },
+  {
+    "stage": "physical_lift",
+    "step": 4800
+  },
+  {
+    "stage": "transport",
+    "step": 5020
+  },
+  {
+    "stage": "descend_to_place",
+    "step": 5320
+  },
+  {
+    "stage": "release_and_retreat",
+    "step": 5630
+  }
+]

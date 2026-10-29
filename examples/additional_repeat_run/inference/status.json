@@ -1,0 +1,31 @@
+{
+  "phase": "completed",
+  "stage": "infer",
+  "instruction": "抓起蓝色方块然后放下。重复三回",
+  "video_finalized": false,
+  "started_at": "2026-10-29T11:29:59.389514+00:00",
+  "plan": {
+    "actions": [
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "pick_place",
+        "object_id": "blue_block",
+        "target_id": "left_tray"
+      },
+      {
+        "action": "done"
+      }
+    ]
+  },
+  "resource_peak_measured_mib": 17614.0,
+  "finished_at": "2026-10-29T11:31:46.439508+00:00"
+}

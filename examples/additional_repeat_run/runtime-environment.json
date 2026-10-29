@@ -1,0 +1,25 @@
+{
+  "python": "3.11.15",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "genesis-world": "1.4.4",
+    "transformers": "5.12.0",
+    "gradio": "6.30.0"
+  },
+  "admitted_gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "resource_budget_mib": 6144,
+  "physics_backend": "cpu",
+  "simulation_settings": {
+    "dt_seconds": 0.01,
+    "physics_substeps": 4,
+    "noslip_iterations": 5,
+    "friction_cone": "pyramidal",
+    "block_size_m": 0.025,
+    "grasp_force_n_per_finger": 2.0,
+    "pair_grasp_force_n_per_finger": 4.0,
+    "finger_extensions": true,
+    "grasp_offset_m": 0.165,
+    "pair_grasp_offset_m": 0.165
+  }
+}

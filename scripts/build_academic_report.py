@@ -82,13 +82,13 @@ def projected(position: list[float]) -> tuple[float, float]:
             360 - focal * float(delta @ up) / float(delta @ forward))
 
 
-def annotated_gray(source: Path, output: Path, positions: dict) -> None:
+def annotated_gray(source: Path, output: Path, positions: dict, *, label_offsets: dict | None = None) -> None:
     with PILImage.open(source) as original:
         require(original.size == (960, 720), "Review annotation projection for a different camera resolution")
         gray = original.convert("L")
     draw = ImageDraw.Draw(gray)
     font = ImageFont.load_default(size=30)
-    offsets = {"blue_block": (-90, -43), "yellow_block": (65, -12), "red_block": (-95, 32)}
+    offsets = label_offsets or {"blue_block": (-90, -43), "yellow_block": (65, -12), "red_block": (-95, 32)}
     for object_id, letter in [("blue_block", "b"), ("yellow_block", "y"), ("red_block", "r")]:
         x, y = projected(positions[object_id])
         dx, dy = offsets[object_id]
