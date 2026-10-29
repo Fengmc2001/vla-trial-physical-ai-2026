@@ -177,3 +177,7 @@ limitations. Build it only from complete real evidence and independently
 recompute the scores. Inspect every rendered page and the final video before
 publishing. Local artifact creation, public publication and course submission
 are separate states.
+
+## Public release
+
+The completed code, sanitized evidence, 70.5-second final video and three-page report are published at https://github.com/Fengmc2001/vla-trial-physical-ai-2026. Public visibility and anonymous access were checked. The clean export passed 170 CPU tests; a fresh GPU-machine reproduction has not been claimed. YouTube upload and OmniCampus submission remain separate.
