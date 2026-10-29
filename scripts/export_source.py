@@ -194,7 +194,7 @@ def main():
         sources.extend(p for p in (root / directory).rglob("*") if p.is_file() and "__pycache__" not in p.parts and not p.name.startswith(".") and p.suffix in (".py", ".md"))
     # Development plans and draft reports contain internal status and unfinished
     # result fields. Export only the public instructions and marked template.
-    sources.extend(root / "docs" / n for n in ("SUBMISSION_CHECKLIST.md", "REPORT_TEMPLATE_JA.md", "USER_GUIDE_ZH.md", "SOURCE_PROVENANCE.md", "EXPERIMENT_PROTOCOL.md"))
+    sources.extend(root / "docs" / n for n in ("SUBMISSION_CHECKLIST.md", "REPORT_TEMPLATE_JA.md", "USER_GUIDE_ZH.md", "SOURCE_PROVENANCE.md", "EXPERIMENT_PROTOCOL.md", "TECHNICAL_REFERENCE.md"))
     if (root / "docs" / "ACADEMIC_REPORT_JA.md").is_file():
         sources.append(root / "docs" / "ACADEMIC_REPORT_JA.md")
     sources.extend(root / "scripts" / n for n in ("bootstrap.sh", "cpu_check.sh", "start_preview.sh", "start_live.sh", "export_source.py", "build_submission_video.py", "build_submission_report.py", "build_academic_report.py", "build_action_report_data.py"))
